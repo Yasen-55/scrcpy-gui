@@ -5,10 +5,11 @@ import { ptBR } from './locales/pt-BR';
 import { zhCN } from './locales/zh-CN';
 import { zhTW } from './locales/zh-TW';
 import { ru } from './locales/ru';
+import { bg } from './locales/bg';
 
 
-export type Locale = 'en' | 'fr' | 'pt-BR' | 'zh-CN' | 'zh-TW' | 'ru';
-export const SUPPORTED_LOCALES: Locale[] = ['en', 'fr', 'pt-BR', 'zh-CN', 'zh-TW', 'ru'];
+export type Locale = 'en' | 'fr' | 'pt-BR' | 'zh-CN' | 'zh-TW' | 'ru' | 'bg';
+export const SUPPORTED_LOCALES: Locale[] = ['en', 'fr', 'pt-BR', 'zh-CN', 'zh-TW', 'ru', 'bg'];
 const STORAGE_KEY = 'scrcpy_locale';
 const localeBundles: Record<Locale, Translations> = {
     en,
@@ -16,7 +17,8 @@ const localeBundles: Record<Locale, Translations> = {
     'pt-BR': ptBR,
     'zh-CN': zhCN,
     'zh-TW': zhTW,
-    ru
+    ru,
+    bg
 };
 
 type Primitive = string | number | boolean;
@@ -74,6 +76,7 @@ function detectInitialLocale(): Locale {
         if (lower === 'pt-br' || lower.startsWith('pt-br')) return 'pt-BR';
         if (lower.startsWith('pt')) return 'pt-BR';
         if (lower.startsWith('ru')) return 'ru';
+        if (lower.startsWith('bg')) return 'bg';
         if (lower.startsWith('fr')) return 'fr';
         if (lower.startsWith('en')) return 'en';
     }
