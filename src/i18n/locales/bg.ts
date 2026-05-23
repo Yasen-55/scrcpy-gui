@@ -1,12 +1,16 @@
 // Bulgarian translations - mirrors the base/fallback locale keys perfectly.
 
-export const bg = {
+import type { Translations } from './en';
+
+export const bg: Translations = {
     languages: {
-        en: 'English',
-        fr: 'Français',
-        'pt-BR': 'Português (Brasil)',
-        bg: 'Български',
-        ru: 'Русский'
+        en: 'Английски',
+        fr: 'Френски',
+        'pt-BR': 'Португалски (Бразилия)',
+        'zh-CN': 'Китайски (опростен)',
+        'zh-TW': 'Китайски (традиционен)',
+        ru: 'Руски',
+        bg: 'Български'
     },
     common: {
         ok: 'ОК',
